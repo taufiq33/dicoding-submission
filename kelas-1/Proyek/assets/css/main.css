@@ -1,0 +1,800 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all .2s;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+main{
+    max-width: 94%;
+    margin: 0 auto;
+}
+
+header{
+    padding: 0;
+    margin: 0 auto;
+    position: sticky;
+    top: 0;
+    z-index: 9999999;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+header nav{
+    background-image: linear-gradient(to right bottom,#e95620,#ad65d6);
+    height: 60px;
+}
+
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+header nav ul li{
+    padding: 5px;
+}
+
+#burger-menu{
+    display: none;
+}
+
+.show{
+    display: block !important;
+}
+
+.content{
+    margin: 20px auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+li.menu-logo a img{
+    height: 50px;
+    padding-bottom: 5px;
+}
+
+li.menu-logo a img:hover{
+    transform: rotate(350deg);
+    transition: all .5s;
+}
+
+.label-logo{
+    position: relative;
+    top: -15px;
+    font-size: 2rem;
+}
+
+li.menu-utama{
+    padding-top: 10px;
+}
+
+li.menu-utama ul li a{
+    padding: 10px 20px;
+    letter-spacing: .9px;
+    font-size: 1.1rem;
+}
+
+li.menu-utama ul li a:hover{
+    background-color: rgba(206, 138, 113, 0.842);
+}
+
+header nav ul li a {
+    color: white;
+}
+
+main{
+    padding-top: 15px;
+}
+
+.jumbotron{
+    text-align: center;
+    margin: 30px auto;
+    padding-bottom: 20px;
+}
+
+.jumbotron h1{
+    margin: 20px auto;
+    font-size: 2.3rem;
+}
+
+.jumbotron-description{
+    font-size: 1.3rem;
+}
+
+.slideshow{
+    margin: 20px auto;
+}
+
+.slideshow-main{
+    position: relative;
+    display: flex;
+}
+
+.slideshow-main button{
+    position: absolute;
+    font-weight: bold;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.slideshow-main button:hover{
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    background:rgb(167, 61, 23);
+}
+
+.slideshow-nav-right{
+    top: 50%;
+    right: 14%;
+}
+
+.slideshow-nav-left{
+    top: 50%;
+    left: 14%;
+}
+
+.slideshow-photo-container{
+    height: 400px;
+    width: 730px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slideshow-photo-container img{
+    max-height: 100%;
+    width: 100%;
+    object-fit:cover;
+    object-position:center;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    opacity: 0.5;
+    animation-name: slideshow;
+    animation-duration: 5.5s;
+    animation-iteration-count: infinite;
+    transition: all .6s;
+}
+
+#bagian-antarmuka{
+    color: white;
+    display: flex;
+    background-color: #e95620;
+    background-image: linear-gradient(to right bottom,#e95620,#ad65d6);
+    padding: 50px 10px;
+    margin: 20px auto;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+#bagian-antarmuka aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+
+.logo-bg-putih img{
+    width: 210px;
+}
+
+#bagian-antarmuka aside h2{
+    line-height: 3;
+    font-size: 1.3rem;
+}
+
+#bagian-antarmuka aside h3{
+    line-height: 5;
+    font-size: 1.4rem;
+}
+
+iframe{
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+#bagian-fitur{
+    margin: 60px auto;
+}
+
+#bagian-fitur .bagian-fitur-pengantar{
+    width: 50%;
+    margin: 0 auto;
+}
+
+#bagian-fitur .bagian-fitur-pengantar h2{
+    line-height: 3;
+    font-size: 1.6rem;
+}
+
+#bagian-fitur .bagian-fitur-pengantar p{
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.bagian-fitur-utama{
+    display: flex;
+    justify-content: space-around;
+}
+
+.bagian-fitur-utama section{
+    flex-basis: 30%;
+}
+
+.bagian-fitur-utama section figure{
+    max-height: 500px;
+}
+
+.bagian-fitur-utama img{
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    border-radius: 5px;
+    margin-bottom:10px;
+}
+
+#bagian-aplikasi{
+    margin: 25px auto;
+    background-image: linear-gradient(to bottom,rgba(46,38,49,.8),rgba(11,18,21,.5)), url("../images/bg-aplikasi.png");
+    background-position: top;
+    background-size: cover;
+    color: white;
+    padding: 50px;
+}
+
+#bagian-aplikasi .bagian-aplikasi-pengantar{
+    width: 60%;
+    margin: 0 auto;
+}
+
+#bagian-aplikasi .bagian-aplikasi-pengantar h2{
+    line-height: 3;
+    font-size: 1.6rem;
+    text-shadow: 0 0 2px #000;
+}
+
+#bagian-aplikasi .bagian-aplikasi-pengantar p{
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
+#bagian-aplikasi section{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+    margin: 25px auto;
+}
+
+#bagian-aplikasi section .bagian-aplikasi-item{
+    flex-basis: 30%;
+    margin: 10px;
+}
+
+#bagian-aplikasi section .bagian-aplikasi-item img{
+    height: 64px;
+    width: 64px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+#bagian-aplikasi section .bagian-aplikasi-item img:hover{
+    transform: scale(1.2);
+    transition: all 1s;
+}
+
+#bagian-aplikasi section .bagian-aplikasi-item a{
+    display: block;
+    color: white;
+    padding: 10px;
+}
+
+#bagian-aplikasi section .bagian-aplikasi-item a:hover{
+    text-decoration: underline;
+}
+
+#bagian-varian{
+    margin-bottom: 40px;
+}
+
+#bagian-varian .bagian-varian-pengantar{
+    width: 60%;
+    margin: 15px auto;
+}
+
+#bagian-varian .bagian-varian-pengantar h2{
+    line-height: 2;
+    font-size: 1.3rem;
+    text-shadow: 0 0 1px #000;
+}
+
+#bagian-varian .bagian-varian-pengantar p{
+    font-size: 1.1rem;
+}
+
+#bagian-varian section .tab-nav{
+    padding: 20px 5px;
+}
+
+#bagian-varian section .tab-nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bagian-varian section .tab-nav ul li{
+    padding: 2px 15px;
+}
+
+#bagian-varian section .tab-nav ul li a{
+    color: black;
+    border-bottom: 1px dashed black;
+    border-top: 1px dashed transparent;
+    border-right: 1px dashed transparent;
+    border-left: 1px dashed transparent;
+    padding: 5px;
+}
+
+#bagian-varian section .tab-nav ul li a:hover, a.tab-nav-active{
+    border: 2px dotted black !important;
+}
+
+#bagian-varian section .tab-content{
+    margin: 5px auto;
+}
+
+#bagian-varian section .tab-content .tab-content-item{
+    display: none;
+}
+
+#bagian-varian section .tab-content .tab-content-item-active{
+    display: block;
+    height: 500px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#bagian-varian section .tab-content .tab-content-item-active figure img{
+    max-width: 75%;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+#bagian-varian section .tab-content .tab-content-item-active figure figcaption{
+    margin: 8px auto;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: "Ubuntu Condensed", fantasy;
+}
+
+.tab-content-item-link a{
+    margin: 15px 10px;
+}
+
+.link-more-info{
+    border-bottom: 1px dashed black;
+    color: black;
+}
+
+.link-more-info:hover{
+    border-bottom: 1px solid black;
+    opacity: .8;
+}
+
+#bagian-unduh {
+    margin: 30px 0;
+    height: 500px;
+    background-image: url("../images/Focal-Fossa_WP_1920x1080_GREY.png");
+    background-position: top;
+    background-size: cover;
+    display: flex;
+    padding: 30px;
+}
+
+#bagian-unduh section{
+    flex-basis: 65%;
+    align-self: center;
+    padding: 10px;
+}
+
+#bagian-unduh section h2{
+    line-height: 2;   
+    text-shadow: 0 0 2px #000;
+}
+
+#bagian-unduh section h3{
+    line-height: 2;
+}
+
+#bagian-unduh section p{
+    text-align: center;
+    line-height: 2;
+    margin-bottom: 15px;
+}
+
+#bagian-unduh aside{
+    flex-basis: 30%;
+    padding: 10px;
+    align-self: center;
+}
+
+#bagian-unduh aside h2{
+    line-height: 2;
+    text-shadow: 0 0 2px #000;
+}
+
+#bagian-unduh ul li{
+    display: block;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+}
+
+#bagian-unduh ul li:hover{
+    background: #eee;
+    border: 1px solid black;
+}
+
+aside.biodata{
+    padding: 6px;
+    width: 30%;
+    margin: 10px auto;
+    text-align: center;
+    background-image: linear-gradient(to right bottom,#e95620,#ad65d6);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    color: white;
+    border-radius: 10px;
+}
+
+aside.biodata h2{
+    line-height: 1;
+    margin: 10px auto;
+    text-shadow: 0 0 1px #000;
+}
+
+aside.biodata .card figure img{
+    width: 60%;
+    border-radius: 10%;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+aside.biodata .card figure figcaption{
+    font-size: 1.3rem;
+    margin: 5px 0;
+    opacity: .9;
+}
+
+aside.biodata .biodata-social-media{
+    padding: 10px 0;
+}
+
+aside.biodata .biodata-social-media ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside.biodata .biodata-social-media ul li{
+    padding: 5px 10px;
+}
+
+aside.biodata .biodata-social-media ul li a img{
+    width: 24px;
+}
+
+aside.biodata .biodata-social-media ul li a img:hover{
+    transition: all .5s;
+    filter: grayscale(100);
+}
+
+footer{
+    margin-top: 50px;
+    background: #3c3b37;
+    color: white;
+    padding: 8px 10px;
+}
+
+footer .sub-footer{
+    font-weight: bold;
+}
+
+footer .sub-footer span{
+    color: #999;
+    font-size: .9rem;
+    margin: 10px 0;
+}
+
+footer .footer-nav{
+    position: relative;
+}
+
+footer .footer-nav .nav-left{
+    float: left;
+    display: flex;
+}
+
+footer .footer-nav .nav-left li{
+    margin: 20px 3px;
+}
+
+footer .footer-nav .nav-left li a{
+    padding: 10px 20px;
+    color: #eee;
+    font-size: .9rem;
+    text-decoration: underline;
+}
+
+footer .footer-nav .nav-left li a:hover, .footer-nav-active{
+    background: #494843;
+}
+
+footer .footer-nav .nav-right{
+    float: right;
+    display: flex;
+    position: absolute;
+    top: -60px;
+    right: 0;
+}
+
+footer .footer-nav .nav-right li{
+    margin: 20px 3px;
+}
+
+footer .footer-nav .nav-right li a{
+    padding: 10px 5px;
+    color: #eee;
+    font-size: .7rem;
+    text-decoration: underline;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer-nav .nav-right li a img{
+    max-width: 24px;
+}
+
+footer .footer-nav .nav-right li a img:hover{
+    filter: grayscale(100);
+}
+
+.clearboth{
+    clear: both;
+}
+
+.btn-standart{
+    border: 1px solid rgb(233, 86, 32);
+    background-color: rgb(233, 86, 32);
+    color: white;
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    margin: 3px .5px;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+.btn-standart:hover{
+    color: rgb(233, 86, 32);
+    background-color: white;
+}
+
+@keyframes slideshow {
+    from{
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:680px) {
+    iframe{
+        max-width:88%;
+        height: auto;
+    }
+
+    .bagian-fitur-utama{
+        flex-direction: column;
+    }
+
+    .bagian-fitur-utama section{
+        margin: 20px 0;
+    }
+
+    #bagian-unduh {
+        flex-direction: column;
+        height: auto;
+        margin-top: 40px;
+    }
+
+    #bagian-unduh aside{
+        margin-top: 10px;
+    }
+
+    footer .sub-footer{
+        text-align: center;
+    }
+
+    footer .footer-nav{
+        display: flex;
+        flex-direction: column;
+        position: static;
+    }
+    footer .footer-nav .nav-right, footer .footer-nav .nav-left{
+        float: none;
+        position: static;
+    }
+
+    .footer-nav .nav-left{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-nav .nav-right{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+@media screen and (max-width:860px) {
+
+    header nav ul{
+        position: relative;
+    }
+
+    li.menu-utama{ 
+        display: none;
+    }
+
+    li.menu-utama{
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: -232px;
+        left: -5px;
+        background: black;
+        width: 100vw;
+        opacity: .9;
+        border-radius: 5px;
+        border: 1px solid purple;
+        box-shadow: 0 3px 6px 0 purple;
+    }
+    
+    li.menu-utama ul {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    li.menu-utama ul li a{
+        padding: 10px 5px;
+        letter-spacing: normal;
+        font-size: 1rem;
+        display: block;
+        text-align: center;
+    }
+
+    li.menu-kanan{
+       padding-top: 10px;
+       padding-right: 13px;
+    }
+
+    #burger-menu{
+        display: block;
+        font-size: 1.4rem;
+        color: white;
+        border: 1px solid #eee;
+        padding: 5px 10px;
+        box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+        border-radius: 8px;
+    }
+
+    #burger-menu:hover{
+        cursor: pointer;
+        background: white;
+        color: black;
+        border: 1px solid black;
+    }
+    
+    .slideshow-main > button{
+        display: none;
+    }
+    
+    .content{
+        margin: 0 auto;
+        padding-top: 0;
+    }
+
+    .jumbotron{
+        margin: 0 auto;
+    }
+
+    #bagian-aplikasi .bagian-aplikasi-pengantar{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #bagian-aplikasi .bagian-aplikasi-pengantar h2{
+        line-height: 1.5;
+        font-size: 1.6rem;
+        text-shadow: 0 0 2px #000;
+    }
+
+    #bagian-aplikasi .bagian-aplikasi-pengantar p{
+        font-size: 1.1rem;
+        text-align:center;
+        padding-top: 10px;
+    }
+
+    #bagian-aplikasi section{
+        flex-direction: column;
+    }
+
+    #bagian-varian{
+        margin-bottom: 0px;
+    }
+
+    #bagian-varian .bagian-varian-pengantar{
+        width: 90%;
+        margin: 15px auto;
+    }
+
+    #bagian-varian section .tab-content .tab-content-item-active figure img{
+        max-width: 95%;
+    }
+
+    #bagian-varian section .tab-nav ul{
+        flex-wrap: wrap;
+    }
+
+    #bagian-varian section .tab-nav ul li{
+        padding: 10px 15px;
+    }
+
+    aside.biodata{
+        width: 60%;
+    }
+}
+
+@media screen and (max-width:1100px) {
+    article{
+        margin-top: 20px;
+    }
+
+    #bagian-antarmuka{
+        flex-direction: column;
+    }
+
+    #bagian-fitur .bagian-fitur-pengantar{
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    #bagian-fitur .bagian-fitur-pengantar h2{
+        line-height: 1.5;
+    }
+
+    #bagian-fitur .bagian-fitur-pengantar p{
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+
+    #bagian-varian section .tab-content .tab-content-item-active{
+        height: auto;
+    }
+}

@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+ }
+
+main{
+    padding: 20px;
+    width: 88%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+#content{
+    float: left;
+    width: 75%;
+}
+
+aside{
+    float: left;
+    width: 20%;
+    margin-left: 15px;
+}
+
+header{
+    display: inline;
+}
+
+nav{
+    background-color: rgb(95, 74, 190);
+    padding: 5px;
+    position: sticky;
+    top: 0;
+    box-shadow: 2px 7px 10px 4px rgba(95, 74, 190, 0.5);
+}
+
+nav a{
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover{
+    font-weight: bolder;
+}
+
+nav li{
+    display: inline;
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+ h2, h3 {
+    color: rgba(113, 88, 226,1.0);
+    text-shadow: 3px 5px 5px #abcf96;
+ }
+
+ .jumbotron{
+     font-size: 20px;
+     padding: 60px;
+     background-color: rgba(113, 88, 226,1.0);
+     text-align: center;
+     color: white;
+ }
+
+ .profile header{
+     text-align: center;
+ }
+
+ img.featured-image{
+     width: 100%;
+     max-height: 300px;
+     object-fit: cover;
+     object-position: center;
+ }
+
+ .profile img {
+     max-width: 100%;
+     height: auto;
+ }
+
+ .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+ }
+  
+ footer {
+    padding: 20px;
+    color: white;
+    background-color: rgba(113, 88, 226,1.0);
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 5px 10px 10px 20px rgba(175, 168, 168, 0.493);
+ }
+ 
+
+ @media screen and (max-width: 1000px) {
+     #content, aside{
+         padding: 0;
+         width: 100%;
+     }
+
+     aside{
+         margin: 0;
+     }
+ }

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project selama belajar di Dicoding</title>
+</head>
+<body>
+    <h1>Project selama belajar di Dicoding</h1>
+    <ol>
+        <li><a href="/WebBandung/index.html">Web Bandung</a></li>
+        <li><a href="/WebCalculator/index.html">WebCalculator</a></li>
+        <li><a href="/WebStorage/index.html">WebStorage</a></li>
+    </ol>
+</body>
+</html>

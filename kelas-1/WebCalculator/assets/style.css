@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Martel Sans', sans-serif;
+    padding-bottom: 400px;
+}
+
+.container{
+    width: 88%;
+    margin: 10px auto;
+}
+
+.history-card{
+    padding: 10px;
+    overflow: scroll;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flex-container-column{
+    margin: 0 auto;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flex-container-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.button{
+    flex-basis: 25%;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 40px;
+    border: 1px solid black;
+    background: -webkit-linear-gradient(top, #d2d2d2, #ddd);
+    cursor: pointer;
+}
+
+.button.equals, .button.backspace{
+    flex-basis: 50%;
+}
+
+.display, .display-operator{
+    color: white;
+    width: 100%;
+    background-color: black;
+    border: 1px solid black;
+}
+
+.display{
+    padding: 10px 20px;
+    font-size: 2rem;
+}
+
+.display-operator{
+    padding: 5px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.operator, .negative, .equals, .button.backspace{
+    background: teal;
+    color: white;
+}
+
+.card{
+    border-radius: 5px;
+    padding: 30px;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button:hover{
+    font-weight: bolder;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #eee;
+
+}
+
+th, td{
+    text-align: center;
+    padding: 10px;
+}
+
+th{
+    background-color: teal;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: #eee;
+}
+
+@media screen and (max-width: 513px) {
+    .button{
+        padding: 5px;
+    }
+}
+
+@media screen and (min-width: 514px) {
+    .button{
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+    .flex-container-column{
+        width: 48%;
+    }
+}
