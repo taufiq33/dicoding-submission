@@ -1,0 +1,185 @@
+*{
+    box-sizing: border-box;
+    transform: all .5s;
+}
+
+html,body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+    margin-bottom: 50px;
+}
+
+header{
+    width: 100%;
+    display: block;
+    padding: 20px 0;
+    background-color: teal;
+    color: white;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.container > div {
+    flex-grow: 1;
+}
+
+.form-container{
+    padding: 5px 10px;
+    margin: 10px 0;
+}
+
+.form-component{
+    margin: 20px 0;
+}
+
+.form-component label {
+    margin: 10px 0;
+    color: teal;
+    font-weight: bold;
+}
+
+.primary{
+    font-size: 1.2rem;
+}
+
+.form-component input[type=text],
+.form-component input[type=number] {
+    margin: 10px 0;
+    color: teal;
+    display: block;
+    width: 90%;
+    padding: 10px 4px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    border: 1px solid rgb(214, 213, 213);
+}
+
+.book-list{
+    padding: 10px;
+}
+
+.book-list .belum-selesai-container,
+.book-list .sudah-selesai-container{
+    border-radius: 6px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    padding: 5px;
+}
+
+h2{
+    color: teal;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.aksi{
+    padding: 4px 8px;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+    border: none;
+    background-color: teal;
+    color: white;
+}
+
+.aksi:hover{
+   opacity: .79;
+   cursor: pointer;
+}
+
+.edit{
+    background: yellow;
+    color: black;
+}
+
+.hapus{
+    background: red;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul > li{
+    border: 1px solid teal;
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 15px 15px 0;
+    width: 95%;
+}
+
+
+ul li h3{
+    color: teal;
+    font-weight: bold;
+}
+
+#notifikasi{
+    display: block;
+    padding: 20px 10px;
+    border: 1px solid teal;
+    margin: 10px;
+    border-radius: 5px;
+    position: fixed;
+    max-width: 300px;
+    top: 30%;
+    left: 50%;
+    background-color: #fefefe;
+    margin-left: -150px;
+    box-shadow: 0 7px 10px 0 teal;
+    z-index: 100000000;
+}
+
+#notifikasi h3{
+    color: teal;
+}
+
+#notifikasi b {
+    color: teal;
+    border: .5px solid teal;
+    padding: 3px 6px;
+    border-radius: 6px;
+    font-size: x-large;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+}
+
+#notifikasi b:hover {
+    background-color: teal;
+    color: white;
+}
+
+#notifikasi::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: -9999999999;
+    background: rgba(0,0,0, 0.2);
+}
+
+.hidden{
+    display: none !important;
+}
+
+@media screen and (max-width: 1100px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+}

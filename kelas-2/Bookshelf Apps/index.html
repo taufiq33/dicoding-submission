@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/images/2855804031582967210-512.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>Bookshelf Apps</title>
+</head>
+
+<body>
+    <header>
+        <h1>Bookshelf Apps</h1>
+    </header>
+    <span id="notifikasi" class="hidden">
+        <b onclick="closeModal()">X</b>
+        <h3>BERHASIL</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex recusandae doloremque voluptatem ab ad </p>
+    </span>
+    <main class="container">
+        <div class="form-container">
+            <h2>Tambah Data Buku</h2>
+            <form onsubmit="return false" id="form-utama" action="">
+                <div class="form-component">
+                    <label for="judul">Judul</label>
+                    <input required type="text" name="judul" id="judul">
+                </div>
+                <div class="form-component">
+                    <label for="penulis">Penulis</label>
+                    <input required type="text" name="penulis" id="penulis">
+                </div>
+                <div class="form-component">
+                    <label for="tahun">Tahun</label>
+                    <input required type="number" name="tahun" id="tahun">
+                </div>
+                <div class="form-component">
+                    <label for="isSelesai">Selesai Dibaca</label>
+                    <input type="checkbox" name="isSelesai" id="isSelesai">
+                </div>
+                <div class="form-component">
+                    <input type="submit" id="tambahData" class="aksi primary submit" value="Masukkan Buku ke Rak">
+                    <button id="cancelUpdateData" class="aksi primary hidden">Cancel Update data</button>
+                    <button id="updateData" data-id="" data-selesai="" class="aksi primary hidden">Update data</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="book-list">
+            <div class="search-container">
+                <h2>Cari Buku (berdasarkan judul)</h2>
+                <form action="" onsubmit="return false">
+                    <div class="form-component">
+                        <input type="text" name="search" id="search" placeholder="Cari buku (judul)">
+                    </div>
+                </form>
+            </div>
+            <div class="belum-selesai-container">
+                <h2>Belum selesai dibaca (<span id="jmlhBelum"></span>)</h2>
+                <div class="rak">
+                    <ul id="belum-selesai">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="sudah-selesai-container">
+                <h2>Sudah selesai dibaca (<span id="jmlhSudah"></span>)</h2>
+                <div class="rak">
+                    <ul id="sudah-selesai">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        </div>
+
+
+        <script src="assets/js/storage.js"></script>
+        <script src="assets/js/dom.js"></script>
+        <script src="assets/js/main.js"></script>
+</body>
+
+</html>

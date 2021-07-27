@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Data</title>
+</head>
+<body>
+    <div align="center" class="container">
+        <h1>Data penerima paket WFH</h1>
+        <hr>
+        <div class="form-container">
+            <form id="main-form" action="">
+                <p>
+                    <label for="nama">Nama</label><br>
+                    <input required type="text" name="nama" id="nama" placeholder="masukkan nama...">
+                </p>
+                <p>
+                    <label for="umur">umur</label><br>
+                    <input required type="text" name="umur" id="umur" placeholder="masukkan umur...">
+                </p>
+                <p>
+                    <label for="domisili">domisili</label><br>
+                    <input required type="text" name="domisili" id="domisili" placeholder="masukkan domisili...">
+                </p>
+                <input type="submit" value="Submit data">
+            </form>
+        </div>
+        <hr>
+        <div class="table-container">
+            <button id="resetData">Reset Data</button>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Umur</th>
+                        <th>Domisili</th>
+                    </tr>
+                </thead>
+                <tbody id="data-penerima">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
