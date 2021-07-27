@@ -9,37 +9,38 @@ const btnTambah = document.querySelector("#tambahData");
 const btnUpdate = document.querySelector("#updateData");
 const btnCancelUpdate = document.querySelector("#cancelUpdateData");
 const searchInput = document.querySelector("#search");
+const searchButton = document.querySelector("#searchButton");
 const spanJmlSudah = document.querySelector("#jmlhSudah");
 const spanJmlBelum = document.querySelector("#jmlhBelum");
 const spanModal = document.querySelector("#notifikasi");
 
-function showModal(title, description, autohide=false, extraElement=false){
+function showModal(title, description, autohide = false, extraElement = false) {
     spanModal.querySelector("h3").innerText = title;
     spanModal.querySelector("p").innerHTML = description;
-    if (extraElement){
+    if (extraElement) {
         spanModal.appendChild(extraElement);
     }
     spanModal.classList.remove("hidden");
-    if(autohide > 0){
-        setTimeout(function(){
+    if (autohide > 0) {
+        setTimeout(function () {
             closeModal();
         }, autohide)
     }
 }
 
-function closeModal(){
-    if(spanModal.getElementsByTagName("*").length > 3){
+function closeModal() {
+    if (spanModal.getElementsByTagName("*").length > 3) {
         spanModal.removeChild(spanModal.lastChild);
     }
     spanModal.classList.add("hidden");
 }
 
-function tambahBuku(){
-    if(
+function tambahBuku() {
+    if (
         judulElement.value === "" ||
         penulisElement.value === "" ||
-        tahunElement.value === "" 
-    ){
+        tahunElement.value === ""
+    ) {
         return alert("Mohon isi semua data");
     }
     let judul = judulElement.value;
@@ -47,14 +48,14 @@ function tambahBuku(){
     DataBuku.addDataBuku(
         judulElement.value,
         penulisElement.value,
-        tahunElement.value,
+        parseInt(tahunElement.value),
         selesaiElement.checked
     );
     showModal("BERHASIL", "buku berhasil ditambahkan!", 1700);
     updateDisplay();
 }
 
-function resetForm(){
+function resetForm() {
     judulElement.value = "";
     penulisElement.value = "";
     tahunElement.value = "";
@@ -64,26 +65,26 @@ function resetForm(){
     btnTambah.classList.remove("hidden");
 }
 
-function isiForm(idBuku, nilaiselesai){
+function isiForm(idBuku, nilaiselesai) {
     let item = DataBuku.getBukuById(idBuku, nilaiselesai);
-    judulElement.value = item.buku.judul;
-    penulisElement.value = item.buku.penulis;
-    tahunElement.value = item.buku.tahun;
-    selesaiElement.checked = item.buku.selesai;
+    judulElement.value = item.buku.title;
+    penulisElement.value = item.buku.author;
+    tahunElement.value = item.buku.year;
+    selesaiElement.checked = item.buku.isComplete;
     btnUpdate.setAttribute("data-id", item.buku.id);
-    btnUpdate.setAttribute("data-selesai", item.buku.selesai);
+    btnUpdate.setAttribute("data-selesai", item.buku.isComplete);
     btnUpdate.classList.remove("hidden");
     btnCancelUpdate.classList.remove("hidden");
     btnTambah.classList.add("hidden");
 }
 
-function generateRakBuku(dataList, parentElementList, nilaiselesai){
-    for (buku of dataList){
+function generateRakBuku(dataList, parentElementList, nilaiselesai) {
+    for (buku of dataList) {
         let list = document.createElement("li");
-        list.innerHTML += `<h3>${buku.judul}</h3>`;
-        list.innerHTML += `<p>Penulis : ${buku.penulis}</p>`;
-        list.innerHTML += `<p>Tahun: ${buku.tahun}</p>`;
-        if(nilaiselesai){
+        list.innerHTML += `<h3>${buku.title}</h3>`;
+        list.innerHTML += `<p>Penulis : ${buku.author}</p>`;
+        list.innerHTML += `<p>Tahun: ${buku.year}</p>`;
+        if (nilaiselesai) {
             list.innerHTML += `<p>
                 <button onclick="belumbaca(${buku.id})" class="aksi belum-baca">Belum baca</button>
                 <button onclick="edit(${buku.id},true)" class="aksi edit">Edit</button>
@@ -96,17 +97,17 @@ function generateRakBuku(dataList, parentElementList, nilaiselesai){
                 <button onclick="hapus(${buku.id}, false)" class="aksi hapus">Hapus</button>
             </p>`;
         }
-        
+
         parentElementList.appendChild(list);
     }
 }
 
-function updateCountData(countDataBelum, countDataSudah){
+function updateCountData(countDataBelum, countDataSudah) {
     spanJmlBelum.innerHTML = countDataBelum + " buku";
     spanJmlSudah.innerHTML = countDataSudah + " buku";
 }
 
-function updateDisplay(modePencarian=false, q=""){
+function updateDisplay(modePencarian = false, q = "") {
     resetForm();
     btnUpdate.setAttribute("data-id", "");
     btnUpdate.setAttribute("data-selesai", "");
@@ -117,20 +118,20 @@ function updateDisplay(modePencarian=false, q=""){
     spanJmlBelum.innerHTML = "";
     spanJmlSudah.innerHTML = "";
 
-    if(modePencarian){
+    if (modePencarian) {
         let AllData = DataBuku.searchBuku(q);
         dataBukuBelumSelesai = AllData.belum;
         dataBukuSelesai = AllData.selesai;
 
         updateCountData(dataBukuBelumSelesai.length, dataBukuSelesai.length);
 
-        if(dataBukuSelesai.length < 1){
+        if (dataBukuSelesai.length < 1) {
             rakSudahSelesai.innerHTML = "<h3>Kosong</h3>";
         } else {
             generateRakBuku(dataBukuSelesai, rakSudahSelesai, true);
         }
-    
-        if(dataBukuBelumSelesai.length < 1){
+
+        if (dataBukuBelumSelesai.length < 1) {
             rakBelumSelesai.innerHTML = "<h3>Kosong</h3>";
         } else {
             generateRakBuku(dataBukuBelumSelesai, rakBelumSelesai, false);
@@ -141,18 +142,18 @@ function updateDisplay(modePencarian=false, q=""){
 
         updateCountData(dataBukuBelumSelesai.length, dataBukuSelesai.length);
 
-        if(dataBukuSelesai.length < 1){
+        if (dataBukuSelesai.length < 1) {
             rakSudahSelesai.innerHTML = "<h3>Kosong</h3>";
         } else {
             generateRakBuku(dataBukuSelesai, rakSudahSelesai, true);
         }
-    
-        if(dataBukuBelumSelesai.length < 1){
+
+        if (dataBukuBelumSelesai.length < 1) {
             rakBelumSelesai.innerHTML = "<h3>Kosong</h3>";
         } else {
             generateRakBuku(dataBukuBelumSelesai, rakBelumSelesai, false);
         }
     }
 
-    
+
 }

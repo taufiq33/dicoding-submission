@@ -58,11 +58,15 @@ header{
     margin: 10px 0;
     color: teal;
     display: block;
-    width: 90%;
+    width: 80%;
     padding: 10px 4px;
     border-radius: 5px;
     font-size: 1.2rem;
     border: 1px solid rgb(214, 213, 213);
+}
+
+.form-component.inline input{
+    display: inline;
 }
 
 .book-list{
