@@ -1,5 +1,3 @@
-
-
 if (typeof (Storage) === "undefined") {
     document.write("maaf aplikasi tidak bisa berjalan, browser anda tidak mendukung localStorage");
 } else {
