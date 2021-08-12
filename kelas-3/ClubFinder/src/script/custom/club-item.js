@@ -12,12 +12,12 @@ class ClubItem extends HTMLElement {
             margin: 0;
             box-sizing: border-box;
         }
+
         :host{
-            margin-bottom: 18px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             overflow: hidden;
-            display: block;
+            display: block
         }
         
         :host .fan-art-club {
@@ -57,10 +57,11 @@ class ClubItem extends HTMLElement {
 
     render() {
         this._shadowRoot.innerHTML = ClubItem.css();
-        this._shadowRoot.innerHTML += `<img class="fan-art-club" src="${this._club.fanArt}" alt="Fan Art">
+        this._shadowRoot.innerHTML += `<img class="fan-art-club" src="${this._club.strTeamFanart1 || "https://www.nepal90.com/images/original/icon_team.png"}" alt="Fan Art">
             <div class="club-info">
-            <h2> ${this._club.name} </h2>
-            <p> ${this._club.description} </p>
+            <h2> ${this._club.strAlternate} </h2>
+            <u> ${this._club.strStadium} </u>
+            <p> ${this._club.strDescriptionEN} </p>
             </div>
         `;
     }
