@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Music Catalog App</title>
+</head>
+
+<body class="bg-light">
+    <nav class="shadow navbar navbar-expand-lg navbar-light bg-light bg-gradient p-2 border">
+        <div class="container">
+            <a class="navbar-brand" href="#"> <i> 🎵MusicCatalog.app </i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">🏠Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">🎶Song</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">💽Album</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">⭐Artist</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">🔍 Search</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div id="filter-form" class="col-md-3">
+                <h4>Filter</h4>
+                <hr>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="lyricOnly" id="lyricOnly">
+                    <label class="form-check-label" for="lyricOnly">
+                        Only songs with lyrics
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="songOnly">
+                    <label class="form-check-label" for="songOnly">
+                        Song only
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="artistOnly">
+                    <label class="form-check-label" for="artistOnly">
+                        Artist only
+                    </label>
+                </div>
+            </div>
+            <div id="search-bar" class="col-md-9">
+                <div class="row">
+                    <div class="col-md-5 col-8">
+                        <input class="shadow form-control" type="search" placeholder="Search songs, artist...">
+                    </div>
+                    <div class="col-md-2 col-4">
+                        <button class="btn btn-outline-primary shadow"> <span>Search</span>  🔍</button>
+                    </div>
+                </div>
+                <hr class="w-75">
+                <div class="row mt-4">
+                    <div class="container">
+                        <div class="card shadow mb-3 border border-1 border-secondary bg-white bg-gradient"
+                            style="max-width: 700px;">
+                            <div class="row g-0">
+                                <div class="col-md-3 col-6">
+                                    <img src="https://i.scdn.co/image/ab67616d0000b27325b073e38d5d379f1eec534b"
+                                        class="img-fluid rounded" alt="...">
+                                </div>
+                                <div class="col-md-9 col-6">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold card-title">Kemana Angin Berhembus</h5>
+                                        <p class="text-body"><a class="text-info" href="">Padi</a></p>
+                                        <span class="badge bg-primary rounded-pill float-end">lyric</span>
+                                        <small class="text-muted">Sesuatu yang tertunda</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card shadow mb-3 border border-1 border-secondary bg-white bg-gradient"
+                            style="max-width: 700px;">
+                            <div class="row g-0">
+                                <div class="col-md-3 col-6">
+                                    <img src="https://i.scdn.co/image/26eb1a0cf3954385283951b9d22ea62fed918597"
+                                        class="img-fluid rounded" alt="...">
+                                </div>
+                                <div class="col-md-9 col-6">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold card-title">Bidadari</h5>
+                                        <p class="text-body"><a class="text-info" href="">Padi</a></p>
+                                        <span class="badge bg-primary rounded-pill float-end">lyric</span>
+                                        <small class="text-muted">Lain Dunia</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card shadow mb-3 border border-1 border-secondary bg-white bg-gradient"
+                            style="max-width: 700px;">
+                            <div class="row g-0">
+                                <div class="col-md-3 col-6">
+                                    <img src="https://i.scdn.co/image/ab67616d0000b273fe43ee18c408505d7a2c576b"
+                                        class="img-fluid rounded" alt="...">
+                                </div>
+                                <div class="col-md-9 col-6">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold card-title">Siapa gerangan dirinya</h5>
+                                        <p class="text-body"><a class="text-info" href="">Padi</a></p>
+                                        <span class="badge bg-primary rounded-pill float-end">lyric</span>
+                                        <small class="text-muted">PADI</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

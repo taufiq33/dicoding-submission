@@ -1,0 +1,122 @@
+@font-face {
+	font-family: 'Poppins';
+	src: url('../assets/fonts/Poppins-Regular.eot');
+	src: url('../assets/fonts/Poppins-Regular.woff') format('woff'), 
+        url('../assets/fonts/Poppins-Regular.ttf') format('truetype'), 
+        url('../assets/fonts/Poppins-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+    font-family: "Poppins", "Open Sans", "Ubuntu", sans-serif;
+    padding-bottom: 300px;
+}
+
+.loader{
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -150px;
+    z-index: 100000000;
+    font-weight: bold;
+    color: rgb(95, 74, 190);
+}
+
+.loader::before{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: -9999999999;
+    background-color: #fefefe;
+    opacity: .79;
+}
+
+.divider{
+    box-sizing:content-box;
+    height:0;
+    overflow:visible;
+    display: none;
+    border:0;
+    border-top:1px solid #eee;
+    margin:10px 0;
+}
+
+nav.navbar{
+    background-color: rgb(95, 74, 190);
+}
+
+a{
+    color: rgb(95, 74, 190);
+}
+
+a:hover{
+    color: rgb(153, 140, 207);
+}
+
+#search-btn:hover,
+.nav-item a:hover{
+    opacity: .76;
+}
+
+.img-link {
+    cursor: pointer;
+    box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+.img-link:hover {
+    transition: all .3s;
+    opacity: .68;
+    transform: rotate(5deg);
+}
+
+search-song-item,
+album-item,
+search-artist-item,
+.sidebar-song-page,
+.artist-banner,
+.album-banner{
+    animation-name: animate;
+    animation-duration: 1.3s;
+    transition: all .5s;
+}
+
+@media screen and (max-width: 375px) {
+    
+    .loader{
+        text-align: center;
+        top: 40%;
+        left: 55%;
+    }
+
+    .spinner-loader{
+        display: block;
+    }
+
+    .row{
+        margin-top: 10px;
+    }
+
+    .filter-title{
+        display: none;
+    }
+
+    .divider{
+        display: block;
+    }
+}
+
+@keyframes animate {
+    from{
+        opacity: 0.1;
+        transform: scale(.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
