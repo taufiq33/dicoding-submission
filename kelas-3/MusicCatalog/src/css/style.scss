@@ -1,9 +1,30 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/bootstrap-utilities";
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+@import "~bootstrap/scss/images";
+@import "~bootstrap/scss/badge";
+@import "~bootstrap/scss/card";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/containers";
+@import "~bootstrap/scss/dropdown";
+@import "~bootstrap/scss/forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+@import "~bootstrap/scss/tables";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/helpers";
+@import "~bootstrap/scss/breadcrumb";
+
 @font-face {
 	font-family: 'Poppins';
 	src: url('../assets/fonts/Poppins-Regular.eot');
 	src: url('../assets/fonts/Poppins-Regular.woff') format('woff'), 
-        url('../assets/fonts/Poppins-Regular.ttf') format('truetype'), 
-        url('../assets/fonts/Poppins-Regular.svg') format('svg');
+        url('../assets/fonts/Poppins-Regular.ttf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -60,7 +81,21 @@ a:hover{
 
 #search-btn:hover,
 .nav-item a:hover{
-    opacity: .76;
+    opacity: .69;
+}
+
+search-song-item img{
+    max-height: 150px;
+
+}
+
+search-artist-item{
+    cursor: pointer;
+}
+
+search-song-item:hover,
+search-artist-item:hover{
+    filter: brightness(88%);
 }
 
 .img-link {
@@ -107,6 +142,14 @@ search-artist-item,
 
     .divider{
         display: block;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .breadcumbContainerParent{
+        position: sticky;
+        top: 0;
+        z-index: 1020;
     }
 }
 

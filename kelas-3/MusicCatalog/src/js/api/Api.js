@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export class Ajax {
-    constructor () {
+    constructor() {
         this.API_KEY = `f9fc41eZDXLsGMu8fQVZ6SeuLjP9zk3zOUiwxGqiqaDTlYkNCNviCwaN`;
         this.MAIN_URL = `https://api.happi.dev/v1/music`;
         this.config = {
@@ -12,23 +12,23 @@ export class Ajax {
         };
     }
 
-    set endpoint (endpoint) {
+    set endpoint(endpoint) {
         this.config.url = this.MAIN_URL;
-        this.config.url = `${this.config.url}${endpoint}`; 
+        this.config.url = `${this.config.url}${endpoint}`;
     }
 
-    async makeRequest(){
+    async makeRequest() {
         try {
             // console.log(`request ${this.config.url}`);
             let request = await axios(this.config);
             let response = request.data;
-            if (response){
+            if (response) {
                 return Promise.resolve(response.result);
             } else {
                 throw Error(`Error because ${response.error}`);
             }
         } catch (error) {
-            return Promise.reject(error.message);   
+            return Promise.reject(error.message);
         }
     }
 }

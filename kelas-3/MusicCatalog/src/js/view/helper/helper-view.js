@@ -1,4 +1,3 @@
-import $ from 'jquery';
 import spinner from '../../../assets/images/103.gif';
 
 const appContainer = document.querySelector("#app-container");
@@ -10,13 +9,13 @@ const preventDefaultAnchorTag = () => {
 }
 
 const switchToSinglePage = (mode = off) => {
-    if(mode == "on") {
+    if (mode == "on") {
         $('#home-container').hide();
-        if(appContainer.firstElementChild.classList.contains("loader") == false) {
+        if (appContainer.firstElementChild.classList.contains("loader") == false) {
             $(`<div class="row loader mt-5"></div>`).html(`<p class="text-center">Loading ... <img class="spinner-loader" alt=""></p>`).prependTo(appContainer);
             document.querySelector('.spinner-loader').src = spinner;
-        }  
-        window.scroll(0,0)
+        }
+        window.scroll(0, 0)
     } else {
         $('#home-container').show();
         appContainer.removeChild(appContainer.firstChild);
@@ -28,12 +27,11 @@ const removeContentSinglePage = () => {
     if (appContainer.children.length > 2) {
         appContainer.removeChild(appContainer.lastChild);
     }
-    window.scroll(0,0)
+    window.scroll(0, 0)
 }
 
 const attachSongDetailEvent = (fn) => {
     $('.song-title').on("click", (event) => {
-        console.log(event.target);
         fn(
             event.target.parentElement.getAttribute('data-artist-id'),
             event.target.parentElement.getAttribute('data-album-id'),
@@ -62,4 +60,4 @@ const attachAlbumDetailEvent = (fn) => {
     })
 }
 
-export {attachAlbumDetailEvent, attachSongDetailEvent, attachArtistDetailEvent, preventDefaultAnchorTag, switchToSinglePage, removeContentSinglePage, appContainer};
+export { attachAlbumDetailEvent, attachSongDetailEvent, attachArtistDetailEvent, preventDefaultAnchorTag, switchToSinglePage, removeContentSinglePage, appContainer };

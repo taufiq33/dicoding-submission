@@ -11,11 +11,11 @@ class AlbumPage extends HTMLElement {
         this.render();
     }
 
-    set albumData (objData) {
+    set albumData(objData) {
         this._data.data_realease = "";
         if (objData.data_realease) {
             let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-            let realease  = new Date(objData.data_realease);
+            let realease = new Date(objData.data_realease);
             this._data.data_realease = realease.toLocaleDateString("en-US", options);
         }
         this._data.data_artist_id = objData.data_artist_id;
@@ -29,7 +29,7 @@ class AlbumPage extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <div class="row mt-5 mb-3">
+        <div class="row mt-5 mb-3 breadcumbContainerParent">
             <div id="breadcumbContainer" class="shadow-sm border border-1 rounded bg-white">
                 <nav class="pt-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">

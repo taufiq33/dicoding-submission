@@ -1,5 +1,5 @@
 class FilterForm extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
         this.setAttribute("id", "filter-form");
         this.classList.add("col-md-3");
@@ -9,15 +9,15 @@ class FilterForm extends HTMLElement {
         this.render();
     }
 
-    get value () {
+    get value() {
         return {
-            'lyricOnly' : this.querySelector("#lyricOnly").checked ? 1 : 0,
-            'type' : this.querySelector('#songOnly').checked ? 'track' : 'artist'
+            'lyricOnly': this.querySelector("#lyricOnly").checked ? 1 : 0,
+            'type': this.querySelector('#songOnly').checked ? 'track' : 'artist'
         }
     }
 
-    filterBehavior () {
-        if (this.querySelector('#artistOnly').checked){
+    filterBehavior() {
+        if (this.querySelector('#artistOnly').checked) {
             this.querySelector("#lyricOnly").disabled = true;
             this.querySelector("#lyricOnly").checked = false;
         } else {

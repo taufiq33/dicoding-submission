@@ -11,19 +11,19 @@ class ArtistPage extends HTMLElement {
         this.render();
     }
 
-    set artistData (objData) {
+    set artistData(objData) {
         this._data.artist_id = objData.id_artist;
         this._data.artist = objData.artist;
         this._data.cover = objData.cover;
     }
 
-    set albumsData (objData) {
+    set albumsData(objData) {
         this._data.albums = objData;
     }
 
     render() {
         this.innerHTML = `
-        <div class="row mt-5 mb-3">
+        <div class="row mt-5 mb-3 breadcumbContainerParent">
             <div id="breadcumbContainer" class="bg-white shadow-sm border border-1 rounded">
                 <nav class="pt-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -58,7 +58,7 @@ class ArtistPage extends HTMLElement {
             this.querySelector("#albums").appendChild(albumElement);
         });
 
-        
+
     }
 }
 

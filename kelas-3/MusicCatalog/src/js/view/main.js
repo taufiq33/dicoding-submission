@@ -1,7 +1,6 @@
-import {Data} from '../api/Data.js';
-import $ from 'jquery';
-import {attachSongDetailEvent, attachArtistDetailEvent, preventDefaultAnchorTag} from './helper/helper-view.js';
-import {getSongDetail, getArtistDetail} from './single-page.js';
+import { Data } from '../api/Data.js';
+import { attachSongDetailEvent, attachArtistDetailEvent, preventDefaultAnchorTag } from './helper/helper-view.js';
+import { getSongDetail, getArtistDetail } from './single-page.js';
 import spinner from '../../assets/images/103.gif';
 
 const main = () => {
@@ -18,22 +17,21 @@ const main = () => {
         $('.loader').show();
         try {
             let result = await Data.getRandomSongRelatedPadi();
-            console.log(result);
             renderResultToDOM(result);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             renderError(error);
         }
     }
 
     const requestSearch = async () => {
-        if(searchBarElement.value == '') { return; }
+        if (searchBarElement.value == '') { return; }
         $('.loader').show();
         try {
             let result = await Data.search(searchBarElement.value, filterFormElement.value.type, filterFormElement.value.lyricOnly);
             renderResultToDOM(result);
         } catch (error) {
-            console.log(error);
+            console.error(error);
             renderError(error);
         }
     }
@@ -44,16 +42,14 @@ const main = () => {
     }
 
     const renderResultToDOM = (result) => {
-        console.log("sampai sini");
-        searchResultContainer.innerHTML =  ``;
+        searchResultContainer.innerHTML = ``;
         searchResultContainer.dataLists = result;
         preventDefaultAnchorTag();
-        if(searchResultContainer.type == "track") {
+        if (searchResultContainer.type == "track") {
             attachSongDetailEvent(getSongDetail);
         } else {
             attachArtistDetailEvent(getArtistDetail);
         }
-        console.log("sampai sini juga");
         $('.loader').hide();
     }
 
@@ -62,7 +58,7 @@ const main = () => {
         preventDefaultAnchorTag();
         $('.loader').hide();
     }
-    
+
     searchBarElement.clickEvent = eventWhenClicked;
     $("#search-input").on('keyup', (e) => {
         if (e.key === 'Enter' || e.keyCode === 13) {

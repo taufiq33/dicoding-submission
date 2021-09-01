@@ -1,21 +1,21 @@
 class SearchSongItem extends HTMLElement {
 
-    constructor(){
+    constructor() {
         super();
     }
 
-    set songData (songData) {
+    set songData(songData) {
         this._songData = songData;
     }
-    
-    connectedCallback(){
+
+    connectedCallback() {
         this.render();
     }
 
     render() {
-        
+
         this.classList.add("card", "shadow", "mb-3", "border", "bg-white", "bg-gradient");
-        this.setAttribute("style", `style="max-width: 700px;`);
+        this.setAttribute("style", `max-width: 700px;cursor: pointer`);
         this.innerHTML = `
             <div class="row g-0">
                 <div class="col-md-3 col-6">
@@ -24,9 +24,9 @@ class SearchSongItem extends HTMLElement {
                 </div>
                 <div class="col-md-9 col-6">
                     <div class="card-body">
-                        <a data-artist-id="${this._songData.id_artist}" data-album-id="${this._songData.id_album}" data-song-id="${this._songData.id_track}" class="fw-bold text-dark song-title" href=""><h5 class="card-title">${this._songData.track}</h5></a>
-                        <p class="text-body"><a style="color: rgb(95, 74, 190);" class="text-decoration-none" href="">${this._songData.artist}</a></p>
-                        ${this._songData.haslyrics ? `<span style="background-color: rgb(95, 74, 190); " class="badge rounded-pill float-end">lyric</span>`: ""}
+                        <a data-artist-id="${this._songData.id_artist}" data-album-id="${this._songData.id_album}" data-song-id="${this._songData.id_track}" class="fw-bold  song-title" href=""><h5 class="card-title">${this._songData.track}</h5></a>
+                        <p class="text-body"><span class="text-dark" >${this._songData.artist}</span></p>
+                        ${this._songData.haslyrics ? `<span style="background-color: rgb(95, 74, 190); " class="badge rounded-pill float-end">lyric</span>` : ""}
                         <small class="text-muted">${this._songData.album}</small>
                     </div>
                 </div>
@@ -35,7 +35,10 @@ class SearchSongItem extends HTMLElement {
 
         this.querySelector('.img-link').addEventListener('click', () => {
             this.querySelector('.song-title').firstChild.click();
-        })
+        });
+        this.addEventListener('click', () => {
+            this.querySelector('.song-title').firstChild.click();
+        });
     }
 }
 

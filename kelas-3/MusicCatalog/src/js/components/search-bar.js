@@ -1,5 +1,5 @@
 class SearchBar extends HTMLElement {
-    constructor(){
+    constructor() {
         super();
         this.setAttribute("id", "search-bar");
         this.classList.add("row");
@@ -9,16 +9,16 @@ class SearchBar extends HTMLElement {
         this.render();
     }
 
-    get value () {
+    get value() {
         return this.querySelector("#search-input").value;
     }
 
-    set clickEvent (clickEventFn){
+    set clickEvent(clickEventFn) {
         this._clickEvent = clickEventFn;
         this.render();
     }
 
-    clickDefaultEvent(){
+    clickDefaultEvent() {
         console.info("This is default click event");
     }
 

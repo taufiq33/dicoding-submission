@@ -26,7 +26,7 @@ class SongPage extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <div class="row mt-5">
+        <div class="row mt-5 breadcumbContainerParent">
             <div id="breadcumbContainer" class="shadow-sm border border-1 rounded bg-white">
                 <nav class="pt-3" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                     <ol class="breadcrumb">
