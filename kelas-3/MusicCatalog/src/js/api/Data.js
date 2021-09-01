@@ -4,6 +4,35 @@ const ajaxObject = new Ajax();
 
 export class Data {
 
+    static getRandomSongRelatedPadi(counter = 1) {
+        let hitCounter = counter;
+        //Saya suka padi :D hanya untuk default display di halaman depan.
+        ajaxObject.endpoint = `/artists/210605/smart-playlist`;
+        return new Promise((resolve, reject) => {
+            ajaxObject.makeRequest().then((response) => {
+                if(response.length > 0){
+                    //console.log("Data ditemukan");
+                    console.table(response);
+                    resolve(response);
+                } else {
+                    reject("data tidak ditemukan");
+                }
+            }).catch ((error) => {
+                //console.log(error);
+                if(hitCounter < 3) {
+                    //console.log("request ulang dalam 3detik...");
+                    setTimeout(() => {
+                       resolve(this.getRandomSongRelatedPadi(hitCounter + 1));
+                    }, 3000);
+                } else {
+                    window.alert(`${error} "JARINGAN RUSAK"`);
+                    window.location.reload();
+                }
+            });
+        });
+        
+    }
+
     static search(keyword, type = 'track', hasLyrics = 0, counter = 1){
         let hitCounter = counter;
         //console.log(`Reqeust ke ${hitCounter}`);

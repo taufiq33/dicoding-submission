@@ -13,6 +13,19 @@ const main = () => {
     spinnerElement.src = spinner;
     $('.loader').hide();
 
+    const loadDefaultData = async () => {
+        searchResultContainer.typeLists = 'track'; //default front page
+        $('.loader').show();
+        try {
+            let result = await Data.getRandomSongRelatedPadi();
+            console.log(result);
+            renderResultToDOM(result);
+        } catch (error) {
+            console.log(error);
+            renderError(error);
+        }
+    }
+
     const requestSearch = async () => {
         if(searchBarElement.value == '') { return; }
         $('.loader').show();
@@ -31,6 +44,7 @@ const main = () => {
     }
 
     const renderResultToDOM = (result) => {
+        console.log("sampai sini");
         searchResultContainer.innerHTML =  ``;
         searchResultContainer.dataLists = result;
         preventDefaultAnchorTag();
@@ -39,6 +53,7 @@ const main = () => {
         } else {
             attachArtistDetailEvent(getArtistDetail);
         }
+        console.log("sampai sini juga");
         $('.loader').hide();
     }
 
@@ -57,6 +72,11 @@ const main = () => {
     document.querySelector("#artistOnly").addEventListener('click', () => eventWhenClicked());
     document.querySelector("#songOnly").addEventListener('click', () => eventWhenClicked());
     document.querySelector("#lyricOnly").addEventListener('click', () => eventWhenClicked());
+
+    setTimeout(() => {
+        $('.loader').show();
+        loadDefaultData();
+    }, 1000)
 }
 
 export default main;
