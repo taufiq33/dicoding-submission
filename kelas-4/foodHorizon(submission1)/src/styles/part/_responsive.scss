@@ -1,0 +1,155 @@
+
+@media screen and (min-width: 650px) {
+    header{
+        max-height: 75px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    
+        nav#drawer{
+            display: block;
+            position: static;
+            width: auto;
+            border: none;
+            height: 100%;
+
+            ul.nav__listmenu > li.nav__listmenu__item{
+                display: inline-block;
+            }
+
+            ul.nav__listmenu > li.nav__listmenu__item a {
+                
+                display: inline-block;
+                padding: 15px; 
+            }
+        }
+    
+        div#hamburger-container{
+            display: none;
+        }
+
+        footer{
+            padding: 20px 15px;
+        }
+    }
+
+    div.hero{
+
+        div.hero__inner{
+            font-size: 1.5rem;
+        }
+    }
+
+    main{
+        section.viral-food{
+    
+            .viral-food__content{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                .viral-food__item{
+                    max-width: 40%;
+                }
+            }
+        }
+
+        section.explore-restaurant{
+    
+            .restaurants-container{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+    
+                .explore-restaurant__item{
+                    max-width: 40%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    header{
+        justify-content: space-between;
+        padding-left: 40px;
+        padding-right: 40px;
+
+        nav#drawer{
+            
+            ul.nav__listmenu > li.nav__listmenu__item a {
+                padding-left: 35px;
+                padding-right: 35px; 
+            }
+        }
+    }
+    
+    main{
+        padding-left: 10px;
+        padding-right: 10px;
+
+        section.viral-food{
+    
+            .viral-food__content{
+                justify-content: space-evenly;
+
+                .viral-food__item{
+                    max-width: 35%;
+                }
+            }
+        }
+
+        section.explore-restaurant{
+    
+            .restaurants-container{
+                justify-content: space-evenly;
+    
+                .explore-restaurant__item{
+                    max-width: 35%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    div.hero{
+        min-width: 1000px;
+        margin: 8px 20px;
+    }
+
+    main{
+        padding-left: 17px;
+        padding-right: 17px;
+
+        section.viral-food{
+    
+            .viral-food__content{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 50px;
+                padding-left: 15px;
+                padding-right: 15px;
+
+                .viral-food__item{
+                    max-width: 100%;
+                }
+            }
+        }
+
+        section.explore-restaurant{
+    
+            .restaurants-container{
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                column-gap: 70px;
+                padding-left: 15px;
+                padding-right: 15px;
+    
+                .explore-restaurant__item{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}

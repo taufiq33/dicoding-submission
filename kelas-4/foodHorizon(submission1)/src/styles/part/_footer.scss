@@ -1,0 +1,13 @@
+footer{
+    display: block;
+    padding: 40px 30px;
+    text-align: center;
+    background-color: $black;
+    color: $white;
+    font-weight: bold;
+
+    p a{
+        color: $orange;
+        padding: 14px 0;
+    }
+}

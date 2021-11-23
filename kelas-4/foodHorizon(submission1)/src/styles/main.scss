@@ -1,0 +1,64 @@
+@import 'https://fonts.googleapis.com/css2?family=Poppins&display=swap';
+@import './part/variable';
+@import './part/_header';
+@import './part/_hero';
+@import './part/_main-content';
+@import './part/_footer';
+@import './part/_animation';
+@import './part/_responsive';
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", "Open Sans", ubuntu, sans-serif;
+    background: $bg-utama;
+}
+
+ul{
+    list-style-type: none;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    box-shadow: $boxshadow-utama;
+}
+
+a{
+    color: $orange;
+}
+
+::selection{
+    color: $orange;
+    background-color: $black;
+}
+
+.display{
+    display: block !important;
+}
+
+.skip-link{
+    position: absolute;
+    top: -90px;
+    left: 0;
+    padding: 8px;
+    display: inline-block;
+    text-align: center;
+    color: $orange;
+    background: $black;
+    z-index: 99999;
+    font-weight: bold;
+}
+
+.skip-link:focus{
+    top: 0;
+}
+
+
+
+

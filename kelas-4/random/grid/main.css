@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    color: teal;
+    opacity: .88;
+}
+
+.wrapper{
+    border: 1px solid blue;
+    max-width: 78%;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2px;
+    column-gap: 5px;
+}
+
+.wrapper div{
+    background-color: beige;
+    border: 1px dashed black;
+    padding: 10px;
+}
+
+.Satu{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.Dua{
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.Tiga{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

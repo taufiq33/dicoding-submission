@@ -1,0 +1,24 @@
+{
+    "viralFood" : [
+        {
+            "id" : "1635514375580",
+            "name" : "Risoles Roti tawar",
+            "image" : "https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2020/07/shutterstock_1251826876.jpg",
+            "description" : "Risoles yang unik, dan jauh dari kata ribet. Banyak pengguna TikTok yang membagikan resep makanan ini."
+        },
+        {
+            "id" : "1635514377661",
+            "name" : "Banoffe",
+            "image" : "https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2020/07/shutterstock_1035537679.jpg",
+            "description" : "Kamu suka dengan olahan pisang? Kalau begitu kamu wajib mencoba banoffee. Teksturnya lembut dengan rasa manis dan lumer di mulut serta aromanya yang menggoda, pasti bikin kamu ketagihan!"
+        },
+        {
+            "id" : "1635514376693",
+            "name" : "Simple Churros",
+            "image" : "https://d12man5gwydfvl.cloudfront.net/wp-content/uploads/2020/07/shutterstock_1037089564.jpg",
+            "description" : "Churros juga jadi makanan kekinian yang ikut viral di TikTok. Hmmm, terlihat sungguh enak!"
+        }
+    ]
+}
+
+

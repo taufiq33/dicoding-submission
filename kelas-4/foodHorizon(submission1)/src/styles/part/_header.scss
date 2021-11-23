@@ -1,0 +1,84 @@
+header{
+    padding: 8px;
+    max-height: 64px;
+    margin-bottom: 1px;
+    background: $orange;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: $boxshadow-besar;
+    border-bottom: 1px solid $orange;
+    display: flex;
+    justify-content: space-between;
+
+    a{
+        text-decoration: none;
+    }
+
+    .header__logo{
+        font-size: 2.2rem;
+        padding-left: 9px;
+        font-weight: bolder;
+
+        a {
+            color: $white;
+            font-style: italic;
+            border-bottom: 1px dotted $white;
+        }
+
+        a:hover {
+            color: $grey;
+        }
+    }
+
+    nav#drawer{
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 999;
+        opacity: .95;
+        background: $orange;
+        animation-name: transisi_halus;
+        animation-duration: .2s;
+        border: 1px solid $brown;
+        
+        ul.nav__listmenu > li.nav__listmenu__item a {
+            color: $white;
+            display: block;
+            padding: 15px 0;
+            font-size: 1.2rem;
+            font-weight: bold;    
+            border-bottom: 1px solid transparent;
+        }
+
+        ul.nav__listmenu > li.nav__listmenu__item > a:hover{
+            color: $grey;
+            border-bottom: 1px solid $white;
+        }
+    }
+
+    div#hamburger-container{
+
+        padding-top: 3px;
+        
+        button {
+            cursor: pointer;
+            border: none;
+            width: 44px;
+            height: 44px;
+            background: $bg-utama;
+            border: 1px solid $white;
+            border-radius: 5px;
+            color: $white;
+            font-size: 2.3rem;
+        }
+
+        button:hover {
+            background-color: $white;
+            color: $orange;
+        }
+    }
+}

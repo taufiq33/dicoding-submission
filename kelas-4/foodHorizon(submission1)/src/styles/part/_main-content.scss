@@ -1,0 +1,152 @@
+main{
+    margin: 10px auto;
+    padding: 9px;
+
+    section.viral-food{
+        margin: 20px auto;
+
+        .viral-food__title{
+            text-align: center;
+            margin-bottom: 9px;
+
+            h2{
+                padding: 10px;
+                color: $orange;
+                border: $brown 1px dashed;
+                box-shadow: $boxshadow-utama;
+            }
+            
+        }
+
+        .viral-food__content{
+            padding: 5px;
+
+            .viral-food__item{
+                padding: 2px;
+                margin: 15px auto;
+                text-align: center;
+
+                img{
+                    border-radius: 40%;
+                }
+
+                .viral-food__item__content{
+
+                    h3{ 
+                        color: $orange;
+                        line-height: 3;
+                        letter-spacing: 1.6px;
+
+                        a{
+                            padding: 10px 0;
+                            text-decoration: none;
+                        }
+
+                        a:hover{
+                            text-decoration: underline;
+                            text-shadow: 0 0 3px $white;
+                        }
+                    }
+
+                    p{
+                        color: $brown;
+                    }
+                }
+            }
+        }
+    }
+
+    section.explore-restaurant{
+        margin: 20px auto;
+
+        .explore-restaurant__title{
+            text-align: center;
+            margin-bottom: 9px;
+
+            h2{
+                padding: 10px;
+                color: $orange;
+                border: $brown 1px dashed;
+                box-shadow: $boxshadow-utama;
+            }
+        }
+
+        .restaurants-container{
+            padding: 5px;
+
+            .explore-restaurant__item{
+                padding: 9px;
+                margin: 20px auto;
+                text-align: center;
+                background-color: $white;
+                box-shadow: $boxshadow-utama;
+
+                .explore-restaurant__item__image__container{
+                    position: relative;
+
+                    span.explore-restaurant__item__rating{
+                        position: absolute;
+                        top: 5px;
+                        min-width: 70px;
+                        min-height: 44px;
+                        left: 10px;
+                        font-size: 1.3rem;
+                        color: $orange;
+                        display: inline-block;
+                        padding-top: 8px;
+                        background: $white;
+                        font-weight: bold;
+                        border-radius: 30%;
+                        box-shadow: $boxshadow-utama;
+                        opacity: .95;
+                    }
+
+                    img{
+                        border-radius: 15px;
+                        filter: grayscale(.1);
+                    }
+                }
+
+                .explore-restaurant__item__content{
+                
+                    h3{
+                        line-height: 3;
+                    }
+
+                    h3 a {
+                        letter-spacing: 1.33px;
+                        padding: 10px 0;
+                        color: $orange;
+                        text-decoration: none;
+                    }
+
+                    h3 a:hover{
+                        text-decoration: underline;
+                        text-shadow: 0 0 3px $white;
+                    }
+
+                    p{
+                        overflow: hidden;
+                        line-height: 1.9;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+
+                    span{
+                        display: block;
+                        text-align: right;
+                        margin-top: 8px;
+                        padding: 5px;
+                        font-weight: bold;
+                        color: $brown;
+                        font-size: 0.91rem;
+                    }
+                    
+                }
+            }
+
+           
+        }
+    }
+}
